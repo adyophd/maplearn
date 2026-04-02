@@ -4,7 +4,7 @@
 STAGING_SITE="5aed47ac-f35a-4249-92e4-e7aa2be1ba3c"
 PROD_SITE="d097be82-9a5e-4260-8b05-42687b30434a"
 TOKEN="nfp_KrfYaCry4fKo3FUcBwJ9nD1hjbJAMCsu7bbb"
-SOURCE="/Users/adamyoung/Documents/Claude/Geo/france_cities.html"
+SOURCE="/Users/adamyoung/Documents/Claude/atlasquest/france_cities.html"
 DEPLOY_DIR="/tmp/netlify-deploy"
 
 TARGET=${1:-staging}
