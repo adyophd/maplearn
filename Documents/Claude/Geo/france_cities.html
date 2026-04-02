@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MapLearn</title>
+  <title>AtlasQuest</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,6 +24,7 @@
     }
 
     #title { font-size: 1rem; letter-spacing: 2px; color: #888; white-space: nowrap; }
+    #game-brand { color: #f5c842; font-weight: 700; letter-spacing: 3px; }
 
     /* ── Mode nav buttons ── */
     #mode-nav {
@@ -337,6 +338,14 @@
       align-items: center;
       justify-content: center;
     }
+    #brand-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: #f5c842;
+      margin-bottom: 4px;
+      text-align: center;
+    }
     #selector-title {
       font-size: 2rem;
       letter-spacing: 4px;
@@ -558,8 +567,8 @@
 <!-- Country selector -->
 <div id="country-selector">
   <div>
-    <div id="selector-title">Pick A Country To Learn</div>
-    <div id="selector-subtitle">Choose a country</div>
+    <div id="brand-title">AtlasQuest</div>
+    <div id="selector-subtitle">Choose a country to learn</div>
     <div id="flag-buttons">
       <button class="flag-btn" data-country="france">
         <span class="flag-emoji">🇫🇷</span>
@@ -617,7 +626,7 @@
 </div>
 
 <div id="header">
-  <div id="title" title="Back to country select">&#9733; WHERE IN <span id="country-name">—</span>?</div>
+  <div id="title" title="Back to country select"><span id="game-brand">AtlasQuest</span></div>
   <div id="mode-nav">
     <button class="mode-nav-btn" id="nav-learn">Learn Mode</button>
     <button class="mode-nav-btn" id="nav-names">Show Names</button>
@@ -1344,7 +1353,6 @@ function startDifficulty(difficulty) {
 
   const settings = mapSettings[currentCountry];
   map.setView(settings.center, settings.zoom);
-  document.getElementById('country-name').textContent = settings.label;
   document.getElementById('city-total').textContent   = cities.length;
 
   markers = cities.map((city, i) => {

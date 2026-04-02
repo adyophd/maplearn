@@ -11,10 +11,10 @@ TARGET=${1:-staging}
 
 if [ "$TARGET" = "prod" ]; then
   SITE_ID=$PROD_SITE
-  LABEL="PRODUCTION (adamyoungphd.com)"
+  LABEL="PRODUCTION (atlasquest.io)"
 elif [ "$TARGET" = "staging" ]; then
   SITE_ID=$STAGING_SITE
-  LABEL="STAGING (adamyoungphd-staging.netlify.app)"
+  LABEL="STAGING (staging.atlasquest.io)"
 else
   echo "Usage: ./deploy.sh [staging|prod]"
   exit 1
