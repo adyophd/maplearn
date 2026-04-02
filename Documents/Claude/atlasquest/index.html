@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlasQuest</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    * { -webkit-tap-highlight-color: transparent; }
+    button { touch-action: manipulation; }
+
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .brand {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: #f5c842;
+    }
+    .tagline {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      color: #555;
+      text-transform: uppercase;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 300px;
+    }
+
+    .mode-btn {
+      display: block;
+      padding: 22px 28px;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      border: none;
+      transition: transform 0.12s, background 0.12s;
+      text-align: left;
+    }
+    .mode-btn:active { transform: scale(0.97); }
+
+    .btn-practice {
+      background: rgba(245,200,66,0.1);
+      border: 1.5px solid #f5c842;
+      color: #f5c842;
+    }
+    .btn-practice:hover { background: rgba(245,200,66,0.2); }
+
+    .btn-challenge {
+      background: rgba(126,255,160,0.1);
+      border: 1.5px solid #7effa0;
+      color: #7effa0;
+    }
+    .btn-challenge:hover { background: rgba(126,255,160,0.2); }
+
+    .btn-name { display: block; }
+    .btn-desc {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-top: 5px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 400px) {
+      .brand { font-size: 2.2rem; letter-spacing: 4px; }
+      .btn-group { width: calc(100% - 0px); }
+    }
+  </style>
+</head>
+<body>
+<div class="landing">
+  <div>
+    <div class="brand">AtlasQuest</div>
+    <div class="tagline">Geography · Learn &amp; Compete</div>
+  </div>
+  <div class="btn-group">
+    <a class="mode-btn btn-practice" href="practice.html">
+      <span class="btn-name">Practice</span>
+      <span class="btn-desc">Choose a country &amp; difficulty level</span>
+    </a>
+    <a class="mode-btn btn-challenge" href="challenge.html">
+      <span class="btn-name">Challenge</span>
+      <span class="btn-desc">5 random cities from around the world</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
