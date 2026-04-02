@@ -3,7 +3,9 @@
 
 STAGING_SITE="5aed47ac-f35a-4249-92e4-e7aa2be1ba3c"
 PROD_SITE="d097be82-9a5e-4260-8b05-42687b30434a"
-TOKEN="nfp_KrfYaCry4fKo3FUcBwJ9nD1hjbJAMCsu7bbb"
+# Set NETLIFY_TOKEN in your shell profile (e.g. ~/.zshrc):
+#   export NETLIFY_TOKEN="nfp_..."
+TOKEN="${NETLIFY_TOKEN:?NETLIFY_TOKEN is not set. Add it to your shell profile.}"
 SOURCE_DIR="/Users/adamyoung/Documents/Claude/atlasquest"
 DEPLOY_DIR="/tmp/netlify-deploy"
 
