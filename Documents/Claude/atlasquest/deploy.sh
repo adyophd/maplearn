@@ -6,7 +6,7 @@ PROD_SITE="d097be82-9a5e-4260-8b05-42687b30434a"
 # Set NETLIFY_TOKEN in your shell profile (e.g. ~/.zshrc):
 #   export NETLIFY_TOKEN="nfp_..."
 TOKEN="${NETLIFY_TOKEN:?NETLIFY_TOKEN is not set. Add it to your shell profile.}"
-SOURCE_DIR="/Users/adamyoung/Documents/Claude/atlasquest"
+SOURCE_DIR="$(cd "$(dirname "$0")" && pwd)"
 DEPLOY_DIR="/tmp/netlify-deploy"
 
 TARGET=${1:-staging}
