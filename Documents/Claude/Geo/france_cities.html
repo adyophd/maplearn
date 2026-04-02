@@ -594,6 +594,10 @@
         <span class="flag-emoji">🇮🇳</span>
         <span class="flag-name">India</span>
       </button>
+      <button class="flag-btn" data-country="usa">
+        <span class="flag-emoji">🇺🇸</span>
+        <span class="flag-name">USA</span>
+      </button>
     </div>
   </div>
 </div>
@@ -834,6 +838,93 @@ const allCities = {
     { name: "Vadodara",       lat: 22.3072,  lng:  73.1812 }, // 19 ~1.6M
     { name: "Ghaziabad",      lat: 28.6692,  lng:  77.4538 }, // 20 ~1.6M
   ],
+
+  usa: [
+    // ── State Capitals (capital: true) ──
+    { name: "Montgomery",    lat: 32.3617,  lng: -86.2792,  capital: true },  // AL
+    { name: "Juneau",        lat: 58.3005,  lng: -134.4197, capital: true },  // AK
+    { name: "Phoenix",       lat: 33.4484,  lng: -112.0740, capital: true },  // AZ
+    { name: "Little Rock",   lat: 34.7465,  lng: -92.2896,  capital: true },  // AR
+    { name: "Sacramento",    lat: 38.5816,  lng: -121.4944, capital: true },  // CA
+    { name: "Denver",        lat: 39.7392,  lng: -104.9903, capital: true },  // CO
+    { name: "Hartford",      lat: 41.7658,  lng: -72.6851,  capital: true },  // CT
+    { name: "Dover",         lat: 39.1582,  lng: -75.5244,  capital: true },  // DE
+    { name: "Tallahassee",   lat: 30.4383,  lng: -84.2807,  capital: true },  // FL
+    { name: "Atlanta",       lat: 33.7490,  lng: -84.3880,  capital: true },  // GA
+    { name: "Honolulu",      lat: 21.3069,  lng: -157.8583, capital: true },  // HI
+    { name: "Boise",         lat: 43.6150,  lng: -116.2023, capital: true },  // ID
+    { name: "Springfield",   lat: 39.7817,  lng: -89.6501,  capital: true },  // IL
+    { name: "Indianapolis",  lat: 39.7684,  lng: -86.1581,  capital: true },  // IN
+    { name: "Des Moines",    lat: 41.5868,  lng: -93.6250,  capital: true },  // IA
+    { name: "Topeka",        lat: 39.0489,  lng: -95.6780,  capital: true },  // KS
+    { name: "Frankfort",     lat: 38.2009,  lng: -84.8733,  capital: true },  // KY
+    { name: "Baton Rouge",   lat: 30.4515,  lng: -91.1871,  capital: true },  // LA
+    { name: "Augusta",       lat: 44.3106,  lng: -69.7795,  capital: true },  // ME
+    { name: "Annapolis",     lat: 38.9784,  lng: -76.4922,  capital: true },  // MD
+    { name: "Boston",        lat: 42.3601,  lng: -71.0589,  capital: true },  // MA
+    { name: "Lansing",       lat: 42.7325,  lng: -84.5555,  capital: true },  // MI
+    { name: "St. Paul",      lat: 44.9537,  lng: -93.0900,  capital: true },  // MN
+    { name: "Jackson",       lat: 32.2988,  lng: -90.1848,  capital: true },  // MS
+    { name: "Jefferson City",lat: 38.5767,  lng: -92.1735,  capital: true },  // MO
+    { name: "Helena",        lat: 46.5958,  lng: -112.0270, capital: true },  // MT
+    { name: "Lincoln",       lat: 40.8136,  lng: -96.7026,  capital: true },  // NE
+    { name: "Carson City",   lat: 39.1638,  lng: -119.7674, capital: true },  // NV
+    { name: "Concord",       lat: 43.2081,  lng: -71.5376,  capital: true },  // NH
+    { name: "Trenton",       lat: 40.2171,  lng: -74.7429,  capital: true },  // NJ
+    { name: "Santa Fe",      lat: 35.6870,  lng: -105.9378, capital: true },  // NM
+    { name: "Albany",        lat: 42.6526,  lng: -73.7562,  capital: true },  // NY
+    { name: "Raleigh",       lat: 35.7796,  lng: -78.6382,  capital: true },  // NC
+    { name: "Bismarck",      lat: 46.8083,  lng: -100.7837, capital: true },  // ND
+    { name: "Columbus",      lat: 39.9612,  lng: -82.9988,  capital: true },  // OH
+    { name: "Oklahoma City", lat: 35.4676,  lng: -97.5164,  capital: true },  // OK
+    { name: "Salem",         lat: 44.9429,  lng: -123.0351, capital: true },  // OR
+    { name: "Harrisburg",    lat: 40.2732,  lng: -76.8867,  capital: true },  // PA
+    { name: "Providence",    lat: 41.8240,  lng: -71.4128,  capital: true },  // RI
+    { name: "Columbia",      lat: 34.0007,  lng: -81.0348,  capital: true },  // SC
+    { name: "Pierre",        lat: 44.3683,  lng: -100.3510, capital: true },  // SD
+    { name: "Nashville",     lat: 36.1627,  lng: -86.7816,  capital: true },  // TN
+    { name: "Austin",        lat: 30.2672,  lng: -97.7431,  capital: true },  // TX
+    { name: "Salt Lake City",lat: 40.7608,  lng: -111.8910, capital: true },  // UT
+    { name: "Montpelier",    lat: 44.2601,  lng: -72.5754,  capital: true },  // VT
+    { name: "Richmond",      lat: 37.5407,  lng: -77.4360,  capital: true },  // VA
+    { name: "Olympia",       lat: 47.0379,  lng: -122.9007, capital: true },  // WA
+    { name: "Charleston",    lat: 38.3498,  lng: -81.6326,  capital: true },  // WV
+    { name: "Madison",       lat: 43.0731,  lng: -89.4012,  capital: true },  // WI
+    { name: "Cheyenne",      lat: 41.1400,  lng: -104.8202, capital: true },  // WY
+    // ── Non-capital largest cities (Capitals Plus only) ──
+    { name: "Birmingham",    lat: 33.5186,  lng: -86.8104  },  // AL largest
+    { name: "Anchorage",     lat: 61.2181,  lng: -149.9003 },  // AK largest
+    { name: "Los Angeles",   lat: 34.0522,  lng: -118.2437 },  // CA largest
+    { name: "Bridgeport",    lat: 41.1865,  lng: -73.1952  },  // CT largest
+    { name: "Wilmington",    lat: 39.7447,  lng: -75.5484  },  // DE largest
+    { name: "Jacksonville",  lat: 30.3322,  lng: -81.6557  },  // FL largest
+    { name: "Chicago",       lat: 41.8781,  lng: -87.6298  },  // IL largest
+    { name: "Wichita",       lat: 37.6872,  lng: -97.3301  },  // KS largest
+    { name: "Louisville",    lat: 38.2527,  lng: -85.7585  },  // KY largest
+    { name: "New Orleans",   lat: 29.9511,  lng: -90.0715  },  // LA largest
+    { name: "Portland (ME)", lat: 43.6591,  lng: -70.2568  },  // ME largest
+    { name: "Baltimore",     lat: 39.2904,  lng: -76.6122  },  // MD largest
+    { name: "Detroit",       lat: 42.3314,  lng: -83.0458  },  // MI largest
+    { name: "Minneapolis",   lat: 44.9778,  lng: -93.2650  },  // MN largest
+    { name: "Kansas City",   lat: 39.0997,  lng: -94.5786  },  // MO largest
+    { name: "Billings",      lat: 45.7833,  lng: -108.5007 },  // MT largest
+    { name: "Omaha",         lat: 41.2565,  lng: -95.9345  },  // NE largest
+    { name: "Las Vegas",     lat: 36.1699,  lng: -115.1398 },  // NV largest
+    { name: "Manchester",    lat: 42.9956,  lng: -71.4548  },  // NH largest
+    { name: "Newark",        lat: 40.7357,  lng: -74.1724  },  // NJ largest
+    { name: "Albuquerque",   lat: 35.0844,  lng: -106.6504 },  // NM largest
+    { name: "New York City", lat: 40.7128,  lng: -74.0060  },  // NY largest
+    { name: "Charlotte",     lat: 35.2271,  lng: -80.8431  },  // NC largest
+    { name: "Fargo",         lat: 46.8772,  lng: -96.7898  },  // ND largest
+    { name: "Portland (OR)", lat: 45.5051,  lng: -122.6750 },  // OR largest
+    { name: "Philadelphia",  lat: 39.9526,  lng: -75.1652  },  // PA largest
+    { name: "Sioux Falls",   lat: 43.5446,  lng: -96.7311  },  // SD largest
+    { name: "Houston",       lat: 29.7604,  lng: -95.3698  },  // TX largest
+    { name: "Burlington",    lat: 44.4759,  lng: -73.2121  },  // VT largest
+    { name: "Virginia Beach",lat: 36.8529,  lng: -76.0082  },  // VA largest
+    { name: "Seattle",       lat: 47.6062,  lng: -122.3321 },  // WA largest
+    { name: "Milwaukee",     lat: 43.0389,  lng: -87.9065  },  // WI largest
+  ],
 };
 
 const mapSettings = {
@@ -843,6 +934,7 @@ const mapSettings = {
   japan:   { center: [36.5, 137.5], zoom: 5, label: 'JAPAN'   },
   canada:  { center: [54.0, -96.0], zoom: 4, label: 'CANADA'  },
   india:   { center: [22.0,  78.0], zoom: 5, label: 'INDIA'   },
+  usa:     { center: [39.5, -98.5], zoom: 4, label: 'USA'     },
 };
 
 // ── City facts (learn mode info panel) ──
@@ -982,6 +1074,91 @@ const cityFacts = {
   "Patna": ["Patna was the ancient city of Pataliputra — capital of the Maurya Empire under Ashoka in the 3rd century BC, when it was the largest city on Earth. The city now struggling with poverty and flooding was once the capital of the ancient world."],
   "Vadodara": ["Vadodara's Maharaja Sayaji Rao III made primary education compulsory in his state decades before anywhere else in India — and personally funded B.R. Ambedkar's education abroad, enabling the man who wrote India's constitution to get his degrees."],
   "Ghaziabad": ["Ghaziabad shot from a small town to a city of over 1.6 million in 30 years — driven entirely by people priced out of neighboring Delhi. It is the quintessential boomtown of modern India: built by proximity, not by any identity of its own."],
+
+  // ── USA ──
+  "Montgomery": ["Rosa Parks refused to give up her seat on a Montgomery bus on December 1, 1955, sparking the 381-day boycott that launched the modern Civil Rights Movement and made Martin Luther King Jr. a national figure."],
+  "Juneau": ["Juneau is the only U.S. state capital that cannot be reached by road. Mountains and ocean make it impossible to build a highway — the only way in is by plane or boat, making it more remote than many Alaskan villages."],
+  "Phoenix": ["Phoenix is the only U.S. state capital with more than a million residents. It sits in the Sonoran Desert with less than 8 inches of rain per year, yet is America's fifth-largest city, sustained entirely by water pumped hundreds of miles away."],
+  "Little Rock": ["Little Rock Central High School was the site of the 1957 desegregation crisis, when Eisenhower sent 101st Airborne soldiers to escort nine Black students through the doors — the first time federal troops enforced school integration."],
+  "Sacramento": ["Sacramento was transformed overnight by the Gold Rush. When gold was discovered 50 miles east in January 1848, its population exploded from a handful to 10,000 in under two years, making it the gateway to the California goldfields."],
+  "Denver": ["Denver sits exactly one mile above sea level. The Mile High City marker is embedded in the state capitol steps, and the altitude is real enough to measurably affect athletic performance — NFL teams consistently play worse in their first game here."],
+  "Hartford": ["Hartford was home to Mark Twain and Harriet Beecher Stowe, who were neighbors. Stowe wrote 'Uncle Tom's Cabin' — the novel Lincoln said started the Civil War — two doors from where Twain wrote Huckleberry Finn."],
+  "Dover": ["Delaware was the first state to ratify the U.S. Constitution on December 7, 1787 — which is why it's called 'The First State.' Dover has governed America's smallest state since 1777, longer than almost any other capital in the country."],
+  "Tallahassee": ["Tallahassee was chosen as Florida's capital in 1824 as a geographic compromise between Pensacola and St. Augustine, which were too far apart for legislators to travel between. A central site was scouted through wilderness and selected."],
+  "Atlanta": ["Atlanta was burned to the ground by General Sherman in November 1864. Within two years it had rebuilt and was already growing again — a story enshrined in its official seal: a phoenix rising from flames with the word 'Resurgens' (Rising Again)."],
+  "Honolulu": ["Pearl Harbor, whose bombing pulled the U.S. into World War II on December 7, 1941, is in Honolulu. The USS Arizona still lies on the harbor floor, leaking a quart of oil per day — a slow rainbow slick visible from the memorial above it."],
+  "Boise": ["Boise's name comes from the French 'La rivière boisée' (the wooded river), named by French-Canadian trappers in the 1800s. Despite sitting in high desert, it receives more sunny days per year than Miami."],
+  "Springfield": ["Abraham Lincoln lived in Springfield for 24 years — longer than anywhere else. He practiced law here, married here, raised his children here, and delivered his Farewell Address from the Springfield train station before leaving for Washington."],
+  "Indianapolis": ["The Indianapolis Motor Speedway seats 257,000 spectators — the largest sporting venue in the world by capacity. The Indy 500 has run almost every May since 1911, making it the longest-running major motorsports event in American history."],
+  "Des Moines": ["Iowa holds the first presidential caucuses of every election year, making Des Moines the most politically important small city in America every four years — candidates have been known to shake hands in nearly every diner in the state."],
+  "Topeka": ["The Supreme Court's most consequential civil rights ruling — Brown v. Board of Education — was named for a Topeka case. In 1954, Oliver Brown's suit against Topeka's school board produced the unanimous ruling that ended school segregation nationwide."],
+  "Frankfort": ["Kentucky produces over 95% of the world's bourbon whiskey — more barrels age in the state than there are people living in it. Frankfort sits at the heart of bourbon country, surrounded by distilleries that have operated for centuries."],
+  "Baton Rouge": ["Baton Rouge means 'red stick' in French, named for a boundary pole between two Native American tribal territories. French explorers recorded the pole in 1699 — the name has endured for over 300 years without interruption."],
+  "Augusta": ["Augusta is the second-least-populous state capital in the United States, with about 19,000 residents. Only Montpelier, Vermont is smaller. Maine's capital is smaller than most American suburbs, yet it has governed the state since 1832."],
+  "Annapolis": ["Annapolis served as the capital of the United States from 1783 to 1784, where Congress ratified the Treaty of Paris that ended the Revolutionary War. It's also home to the U.S. Naval Academy, which has trained Navy officers since 1845."],
+  "Boston": ["Boston was the epicenter of the American Revolution — the Boston Massacre, the Boston Tea Party, Paul Revere's Ride, and the first shots at Lexington and Concord all happened within miles of its center. No other city triggered so many founding events."],
+  "Lansing": ["Lansing became Michigan's capital largely by accident. In 1847, a legislator jokingly proposed moving the capital from Detroit to the remote wilderness settlement of Lansing — and the motion passed. Lawmakers arrived to find little more than a log cabin."],
+  "St. Paul": ["St. Paul and Minneapolis sit directly across the Mississippi River from each other. St. Paul is the capital; Minneapolis is larger. The two cities have been rivals for nearly two centuries despite sharing a single metro area — and a single airport."],
+  "Jackson": ["Jackson is named for Andrew Jackson. During the Civil Rights Movement, it was the site of the assassination of NAACP leader Medgar Evers, shot in his own driveway in 1963 — a murder that shocked the nation and accelerated the passage of the Civil Rights Act."],
+  "Jefferson City": ["Jefferson City sits near the geographic center of the United States. Missouri's position between North and South made it a contested border state in the Civil War — the only state to have two competing governments simultaneously recognized."],
+  "Helena": ["Helena was built on a gold strike in 1864 called 'Last Chance Gulch' — miners who were about to give up discovered gold on their final attempt. The original gulch is now Helena's main street, still bearing the name that saved the town."],
+  "Lincoln": ["Lincoln is named for Abraham Lincoln, who had been assassinated just before Nebraska became a state in 1867. The state honored him by naming its new capital after him — he never visited Nebraska while alive."],
+  "Carson City": ["Carson City is one of America's smallest state capitals with 55,000 residents, governing a state of 3 million concentrated in Las Vegas. The silver discovery that created Nevada happened nearby in 1859, and the city was built almost overnight."],
+  "Concord": ["New Hampshire's Concord adopted its name in honor of Concord, Massachusetts — where the first battle of the American Revolution was fought. Concord (NH) became the state capital in 1808, and the name carries the founding moment it commemorates."],
+  "Trenton": ["'Trenton Makes, the World Takes' reads a bridge inscription over the Delaware River. George Washington crossed that same river on Christmas night 1776 and defeated the Hessians at Trenton — one of the most desperate gambles of the Revolutionary War."],
+  "Santa Fe": ["Santa Fe is the oldest state capital in the United States, founded in 1610 — more than 160 years before the Declaration of Independence. It served as the capital of Spanish New Mexico, then Mexican New Mexico, then the U.S. territory and state."],
+  "Albany": ["Albany is the second-oldest continuously chartered city in the United States, chartered in 1686. It sits on the Hudson River, which was the main artery connecting New York City to the continent's interior — Albany was the gateway to America."],
+  "Raleigh": ["Raleigh is named for Sir Walter Raleigh, who organized the Lost Colony of Roanoke in 1587 — the first English settlement in North America. The colony mysteriously vanished, leaving only the word 'CROATOAN' carved on a post. The mystery was never solved."],
+  "Bismarck": ["Bismarck was renamed in 1872 to attract German investment in the Northern Pacific Railway — named for Chancellor Otto von Bismarck. The strategy worked: German capital helped finance the railroad that opened the Great Plains to settlement."],
+  "Columbus": ["Columbus is Ohio's largest city and was purpose-built as a state capital in 1816. Ohio State University, located here, has one of the largest university campus enrollments in the United States — over 60,000 students on a single campus."],
+  "Oklahoma City": ["Oklahoma City was literally created in a single day. On April 22, 1889, the Unassigned Lands opened to settlement and 10,000 people staked claims within hours — 'boomers' who arrived on the first day built a city of tents overnight."],
+  "Salem": ["Salem, Oregon was named by Methodist missionaries in 1841, likely from the Hebrew 'Shalom' (peace). Oregon's capital sits in the Willamette Valley wine country and neighbors some of the most productive farmland in the Pacific Northwest."],
+  "Harrisburg": ["The Three Mile Island nuclear accident — the worst in U.S. history — happened 10 miles from Harrisburg in 1979. A partial meltdown forced 140,000 residents to evacuate and permanently shifted American nuclear energy policy."],
+  "Providence": ["Providence was founded in 1636 by Roger Williams, banished from Massachusetts for his religious views. He named it Providence out of gratitude for survival. Rhode Island was the first colony to declare independence from Britain — two months before the Declaration."],
+  "Columbia": ["Sherman's troops burned much of Columbia in February 1865, near the Civil War's end. South Carolina had been the first state to secede and fired the first shot at Fort Sumter — making its capital a symbolic target and the climactic act of the March to the Sea."],
+  "Pierre": ["Pierre (pronounced 'Peer') is the second-least-populous state capital in the U.S. with about 14,000 residents. It sits almost exactly at the geographic center of South Dakota on the Missouri River, which divides the state into its eastern and western halves."],
+  "Nashville": ["Nashville is the country music capital of the world. The Grand Ole Opry has broadcast live country radio since 1925, and more music is recorded in Nashville than in any other American city. It produces more music per capita than anywhere else on Earth."],
+  "Austin": ["Austin is the birthplace of Dell Technologies — Michael Dell founded it from his University of Texas dorm room in 1984 with $1,000. The city transformed from a college town into a technology hub called 'Silicon Hills' in the 1990s and 2000s."],
+  "Salt Lake City": ["Salt Lake City was founded in 1847 by Brigham Young and Mormon pioneers who had walked 1,300 miles from Illinois to escape persecution. Young arrived, surveyed the valley, and declared 'This is the right place.' The city grid was laid out that same day."],
+  "Montpelier": ["Montpelier is the least-populous state capital in the United States, with just 8,000 residents. It is the only U.S. state capital without a McDonald's — a distinction its residents cite with a mixture of pride and civic identity."],
+  "Richmond": ["Richmond served as the capital of the Confederacy from 1861 to 1865. When Union forces captured it on April 3, 1865, the war effectively ended — Lee surrendered to Grant at Appomattox, just 90 miles away, six days later."],
+  "Olympia": ["Olympia sits at the southernmost tip of Puget Sound, named for the Olympic Mountains visible across the water. Washington State's nickname 'the Evergreen State' came from the dense forests that surround it — trees so thick that early settlers called the region impenetrable."],
+  "Charleston": ["West Virginia is the only state that formed by seceding from another state — it broke away from Virginia in 1863 because western Virginians refused to leave the Union. Charleston became its capital. The entire state is younger than the Civil War."],
+  "Madison": ["Madison is built on an isthmus between two lakes — Mendota and Monona. The University of Wisconsin sits on the shore of Lake Mendota. Madison consistently ranks as one of the most livable cities in the United States and one of the best college towns."],
+  "Cheyenne": ["Cheyenne became a city almost instantly when the Union Pacific Railroad arrived in 1867. Within months, thousands of gamblers, cowboys, and outlaws had settled around it. It was so chaotic it was nicknamed 'the Magic City of the Plains.'"],
+  // ── USA: Non-capital largest cities ──
+  "Birmingham": ["Birmingham was so dominant in steel production that it was called 'the Pittsburgh of the South.' In 1963, police violence against civil rights protesters here was broadcast live on national television — the footage shocked the world and accelerated the Civil Rights Act."],
+  "Anchorage": ["Anchorage is home to 40% of Alaska's entire population — one of the most disproportionate concentrations of any U.S. state. Moose regularly wander through its streets and school grounds, and brown bears are occasionally spotted in its parks."],
+  "Los Angeles": ["Los Angeles has the third-largest urban economy in the world. It is home to Hollywood, which produces more entertainment content than any other city on Earth, and to more foreign-born residents than almost any other American city."],
+  "Bridgeport": ["Bridgeport was home to P.T. Barnum, who served as its mayor in 1875. The showman who gave the world the circus ring spent years trying to transform Bridgeport into a model industrial city — an ambition nearly as audacious as his spectacles."],
+  "Wilmington": ["More than half of all U.S. publicly traded companies and 60% of Fortune 500 companies are incorporated in Delaware — and Wilmington handles most of the legal and financial work. The state's corporate-friendly laws have made it the legal home of American business."],
+  "Jacksonville": ["Jacksonville is the largest city by land area in the contiguous United States, covering 874 square miles — larger than the entire state of Rhode Island. It became this large in 1968 when the city and Duval County merged into a single government."],
+  "Chicago": ["Chicago rebuilt after the Great Fire of 1871 and in doing so invented the modern skyscraper. The Home Insurance Building, completed here in 1885, was the first to use a steel skeleton to bear the load — every skyscraper on Earth traces its lineage to this city."],
+  "Wichita": ["Wichita is the 'Air Capital of the World.' Boeing, Cessna, Learjet, Beechcraft, and Spirit AeroSystems all have their origins or major manufacturing here — more aircraft have been built in Wichita than in any other place in the world."],
+  "Louisville": ["Louisville hosts the Kentucky Derby, the oldest continually held major sporting event in the United States. Run every first Saturday in May since 1875, it's called 'the most exciting two minutes in sports.' Muhammad Ali was born here."],
+  "New Orleans": ["New Orleans was founded by France in 1718, transferred to Spain, returned to France, then sold to the U.S. in 1803. Its French Quarter is the oldest urban neighborhood in the country, and jazz music — one of America's greatest cultural exports — was born in its streets around 1900."],
+  "Portland (ME)": ["Portland, Maine was almost entirely destroyed in the Great Fire of 1866 — 1,800 buildings burned on Independence Day after a firecracker ignited a boat shop. The city rebuilt entirely in brick and granite, which is why so much of its 19th-century downtown still stands."],
+  "Baltimore": ["Baltimore's Fort McHenry withstood a 25-hour British bombardment in September 1814. Watching from a ship in the harbor, Francis Scott Key was so moved that he wrote the poem that became The Star-Spangled Banner — the American national anthem."],
+  "Detroit": ["Detroit invented the American automobile industry. Henry Ford opened his first factory here in 1903, and for decades the city produced more than half the world's cars. At its peak in 1950, Detroit was the fourth-largest city in the United States."],
+  "Minneapolis": ["Minneapolis has more miles of enclosed skyway than any city in the world — over 8 miles of second-floor pedestrian bridges connecting downtown buildings. You can traverse the entire city center without stepping outside, even in temperatures of −30°F."],
+  "Kansas City": ["Kansas City has more public fountains than any city in the world except Rome — over 200. It also has more miles of boulevard than Paris. The city was deliberately beautified in the early 20th century by a civic planning movement that transformed its landscape."],
+  "Billings": ["Billings is the largest city in Montana and the economic hub of an enormous region covering parts of Montana, Wyoming, and the Dakotas. It serves such a vast, sparsely populated area that it's sometimes called the 'capital of the High Plains.'"],
+  "Omaha": ["Warren Buffett — one of the wealthiest people in history — was born in Omaha and still lives and works here, running Berkshire Hathaway from the same city. Every year, 40,000 shareholders travel to Omaha for what's known as 'the Woodstock of Capitalism.'"],
+  "Las Vegas": ["Las Vegas generates more gambling revenue than any other city in the world. The Strip — a 4.2-mile stretch of hotels and casinos — is so bright it's visible from orbit. Las Vegas was empty desert as recently as 1941; it became the fastest-growing American city in history."],
+  "Manchester": ["Manchester's Millyard along the Merrimack River was once home to the world's largest textile factory complex — the Amoskeag Mills, which employed 17,000 people at their peak in the 1910s. The city's entire economy was built on a single set of buildings."],
+  "Newark": ["Newark Liberty International Airport is among the busiest in the New York metro area. The city itself was one of the first chartered in North America (1666) and is the birthplace of several American artists, including singer Whitney Houston."],
+  "Albuquerque": ["Route 66 — the original Main Street of America — ran directly through Albuquerque's downtown. The city has one of the best-preserved Route 66 corridors in the country, and its location on the Rio Grande made it a crossroads of the Southwest for centuries."],
+  "New York City": ["New York City's subway operates 24 hours a day, 7 days a week — one of only a handful of metro systems worldwide that never closes. The city generates more economic output than all but 12 countries on Earth, and its residents speak over 800 languages."],
+  "Charlotte": ["Charlotte is the second-largest banking center in the United States after New York City. Bank of America and Wells Fargo's East Coast headquarters are both here. The city grew from a small tobacco town into a financial capital in fewer than 40 years."],
+  "Fargo": ["Fargo sits on the Red River, one of the few rivers in North America that flows northward — into Canada. The Coen Brothers' film 'Fargo' is named for the city and set largely here, though most of it was filmed in Minnesota. Locals are used to the question."],
+  "Portland (OR)": ["Portland, Oregon has more craft breweries per capita than any other city in the United States — it's the undisputed craft beer capital of America. Its bridges are so defining that the city's nickname is 'Bridgetown,' and a local political party is named after them."],
+  "Philadelphia": ["Philadelphia was the capital of the United States from 1790 to 1800 while Washington, D.C. was being built. Both the Declaration of Independence and the Constitution were written and signed here — more founding documents than any other city."],
+  "Sioux Falls": ["Sioux Falls is named for a series of pink Sioux quartzite waterfalls that run through the center of the city. It is South Dakota's largest and fastest-growing city, serving as the economic hub of a four-state region known as 'Siouxland.'"],
+  "Houston": ["Houston is the most ethnically diverse major city in the United States — no single group is a majority, and over 145 languages are spoken. It's also the energy capital of the world: more oil and gas companies are headquartered here than anywhere else on Earth."],
+  "Burlington": ["Burlington is Vermont's largest city and the smallest 'largest city' of any U.S. state, with just 45,000 people. Bernie Sanders served as Burlington's mayor from 1981 to 1989 — the same city where he launched the political career that led to two presidential campaigns."],
+  "Virginia Beach": ["Virginia Beach has the longest pleasure beach in the world — 35 miles of Atlantic Ocean shoreline. Just across the harbor sits Naval Station Norfolk, one of the world's largest naval complexes, home to dozens of warships, submarines, and aircraft carriers."],
+  "Seattle": ["Seattle is the birthplace of Amazon, Boeing, Starbucks, and Nirvana — more billion-dollar companies and cultural exports per capita than almost any other American city. It sits between Puget Sound and Lake Washington, with Mount Rainier visible on clear days."],
+  "Milwaukee": ["Milwaukee was so dominated by German immigrants in the 19th century that it became the beer capital of America — Pabst, Schlitz, Miller, and Blatz were all founded here. The city's beer barons built grand halls, parks, and neighborhoods that still define its character."],
 
 };
 
@@ -1333,20 +1510,61 @@ function updateModeNav() {
 }
 
 // ── Country selection ──
-const countryFlags = { france: '🇫🇷', germany: '🇩🇪', russia: '🇷🇺', japan: '🇯🇵', canada: '🇨🇦', india: '🇮🇳' };
+const countryFlags = { france: '🇫🇷', germany: '🇩🇪', russia: '🇷🇺', japan: '🇯🇵', canada: '🇨🇦', india: '🇮🇳', usa: '🇺🇸' };
 
 function startCountry(country) {
   currentCountry = country;
   const settings = mapSettings[country];
-  document.getElementById('diff-flag').textContent        = countryFlags[country];
+  document.getElementById('diff-flag').textContent         = countryFlags[country];
   document.getElementById('diff-country-name').textContent = settings.label;
+
+  const diffButtons = document.getElementById('diff-buttons');
+  if (country === 'usa') {
+    diffButtons.innerHTML = `
+      <button class="diff-btn" data-difficulty="capitals">
+        <span class="diff-btn-name">Capitals</span>
+        <span class="diff-btn-desc">All 50 state capitals</span>
+      </button>
+      <button class="diff-btn" data-difficulty="capitals_plus">
+        <span class="diff-btn-name">Capitals Plus</span>
+        <span class="diff-btn-desc">Capitals + largest cities</span>
+      </button>`;
+  } else {
+    diffButtons.innerHTML = `
+      <button class="diff-btn" data-difficulty="easy">
+        <span class="diff-btn-name">Easy</span>
+        <span class="diff-btn-desc">Top 5 cities</span>
+      </button>
+      <button class="diff-btn" data-difficulty="medium">
+        <span class="diff-btn-name">Medium</span>
+        <span class="diff-btn-desc">Top 10 cities</span>
+      </button>
+      <button class="diff-btn" data-difficulty="hard">
+        <span class="diff-btn-name">Hard</span>
+        <span class="diff-btn-desc">Top 15 cities</span>
+      </button>
+      <button class="diff-btn" data-difficulty="veryhard">
+        <span class="diff-btn-name">Very Hard</span>
+        <span class="diff-btn-desc">Top 20 cities</span>
+      </button>`;
+  }
+  diffButtons.querySelectorAll('.diff-btn').forEach(btn => {
+    btn.addEventListener('click', () => startDifficulty(btn.dataset.difficulty));
+  });
+
   document.getElementById('country-selector').style.display    = 'none';
   document.getElementById('difficulty-selector').style.display = 'flex';
 }
 
 function startDifficulty(difficulty) {
-  const count = { easy: 5, medium: 10, hard: 15, veryhard: 20 }[difficulty];
-  cities = allCities[currentCountry].slice(0, count);
+  if (difficulty === 'capitals') {
+    cities = allCities[currentCountry].filter(c => c.capital);
+  } else if (difficulty === 'capitals_plus') {
+    cities = allCities[currentCountry].slice();
+  } else {
+    const count = { easy: 5, medium: 10, hard: 15, veryhard: 20 }[difficulty];
+    cities = allCities[currentCountry].slice(0, count);
+  }
 
   markers.forEach(m => map.removeLayer(m));
   clearQuizOverlays();
@@ -1392,9 +1610,6 @@ document.querySelectorAll('.flag-btn').forEach(btn => {
   btn.addEventListener('click', () => startCountry(btn.dataset.country));
 });
 
-document.querySelectorAll('.diff-btn').forEach(btn => {
-  btn.addEventListener('click', () => startDifficulty(btn.dataset.difficulty));
-});
 
 document.getElementById('diff-back-btn').addEventListener('click', () => {
   document.getElementById('difficulty-selector').style.display = 'none';
