@@ -656,6 +656,8 @@ function makeAnswerIcon() {
 const challengeCities  = selectChallengeCities();
 let quizIndex          = 0;
 let quizTotalDist      = 0;
+let quizBestCity       = null; // { name, dist }
+let quizWorstCity      = null; // { name, dist }
 let quizAnswered       = false;
 let quizGuessMarker    = null;
 let quizAnswerMarker   = null;
@@ -715,6 +717,8 @@ function handleQuizClick(guessLat, guessLng) {
   const city = challengeCities[quizIndex];
   const dist = haversineMiles(guessLat, guessLng, city.lat, city.lng);
   quizTotalDist += dist;
+  if (!quizBestCity  || dist < quizBestCity.dist)  quizBestCity  = { name: city.name, dist };
+  if (!quizWorstCity || dist > quizWorstCity.dist) quizWorstCity = { name: city.name, dist };
 
   quizGuessMarker = L.circleMarker([guessLat, guessLng], {
     radius: 8, color: '#ff6b6b', fillColor: '#ff6b6b', fillOpacity: 0.85, weight: 2
@@ -803,7 +807,11 @@ document.getElementById('share-btn').addEventListener('click', async () => {
   const etYear  = etParts.find(p => p.type === 'year').value;
   const etDate  = `${etMonth} ${etDay} 20${etYear}`;
 
-  const text = `AtlasQuest.io - ${etDate}\nAvg: ${miAvg} miles\n${grade} ${gradeEmoji}`;
+  const bestDist  = quizBestCity  ? (quizBestCity.dist  < 10 ? quizBestCity.dist.toFixed(1)  : Math.round(quizBestCity.dist))  : '?';
+  const worstDist = quizWorstCity ? (quizWorstCity.dist < 10 ? quizWorstCity.dist.toFixed(1) : Math.round(quizWorstCity.dist)) : '?';
+  const bestName  = quizBestCity  ? quizBestCity.name  : '?';
+  const worstName = quizWorstCity ? quizWorstCity.name : '?';
+  const text = `AtlasQuest.io - ${etDate}\nAvg: ${miAvg} miles - ${grade} ${gradeEmoji}\nBest: ${bestName} - ${bestDist} miles\nWorst: ${worstName} - ${worstDist} miles`;
   const url    = 'https://atlasquest.io/challenge.html';
 
   if (navigator.share) {
