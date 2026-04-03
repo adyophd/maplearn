@@ -53,11 +53,17 @@ Branch: `staging` (main working branch — push here)
 
 ## Grading Scale (miles off)
 
-A+ <20, A <40, A- <60, B+ <80, B <100, B- <120, C+ <140, C <160, C- <180, D+ <200, D <220, D- <240, F ≥240
+A+ <40, A <80, A- <120, B+ <160, B <200, B- <240, C+ <280, C <320, C- <360, D+ <400, D <440, D- <480, F ≥480
 
 ## Key Design Decisions
 
 - City facts ("fingerprint facts") are written to be surprising and memorable — one per city
+- **Fact rules (enforce strictly when writing or revising facts):**
+  - Max 200 characters
+  - Prefer a fact about a highly famous person associated with the city; only use a different type of fact if no such person exists
+  - Surprising, memorable, and consistent in tone across all cities
+  - **Facts must be mutually coherent — no two facts may make contradictory claims.** Before writing any comparative claim (e.g. "the only," "the smallest," "the second-least"), verify it doesn't conflict with another city's fact. Known violation to fix: Pierre (SD) and Augusta (ME) both currently claim to be the second-least-populous state capital — only one can be true (Pierre at ~14k is smaller; Augusta at ~19k is third).
+  - **Famous person coverage is currently inconsistent.** When the full fact set is next revised, audit each fact: if a city is associated with a famous person and the current fact doesn't mention one, replace it.
 - Portland disambiguated as "Portland (ME)" and "Portland (OR)" in USA data
 - Inspect button on quiz feedback collapses the modal so the map is visible with guess/answer markers still showing
 - `adamyoungphd.com` is decommissioned — serves a blank page via a separate Netlify site (adamyoungphd-decommissioned)

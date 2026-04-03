@@ -195,17 +195,17 @@
     #end-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
     #practice-btn {
       display: inline-block;
-      background: #f5c842; color: #1a1a2e; border: none; border-radius: 8px;
+      background: transparent; color: #aaa; border: 1px solid #555; border-radius: 8px;
       padding: 13px 28px; font-size: 1rem; font-weight: bold; cursor: pointer;
       letter-spacing: 0.5px; text-decoration: none; font-family: inherit;
     }
-    #practice-btn:hover { background: #ffe066; }
+    #practice-btn:hover { color: #fff; border-color: #aaa; }
     #share-btn {
-      background: transparent; color: #aaa; border: 1px solid #555; border-radius: 8px;
+      background: #f5c842; color: #1a1a2e; border: none; border-radius: 8px;
       padding: 13px 22px; font-size: 1rem; font-weight: bold; cursor: pointer;
       letter-spacing: 0.5px; font-family: inherit;
     }
-    #share-btn:hover { color: #fff; border-color: #aaa; }
+    #share-btn:hover { background: #ffe066; }
     #share-info {
       display: none;
       font-size: 0.8rem; color: #666; letter-spacing: 0.5px;
@@ -538,18 +538,18 @@ function haversineMiles(lat1, lng1, lat2, lng2) {
 }
 
 function distGrade(dist) {
-  if (dist <  20) return { label: 'A+', cls: 'grade-a' };
-  if (dist <  40) return { label: 'A',  cls: 'grade-a' };
-  if (dist <  60) return { label: 'A-', cls: 'grade-a' };
-  if (dist <  80) return { label: 'B+', cls: 'grade-b' };
-  if (dist < 100) return { label: 'B',  cls: 'grade-b' };
-  if (dist < 120) return { label: 'B-', cls: 'grade-b' };
-  if (dist < 140) return { label: 'C+', cls: 'grade-c' };
-  if (dist < 160) return { label: 'C',  cls: 'grade-c' };
-  if (dist < 180) return { label: 'C-', cls: 'grade-c' };
-  if (dist < 200) return { label: 'D+', cls: 'grade-d' };
-  if (dist < 220) return { label: 'D',  cls: 'grade-d' };
-  if (dist < 240) return { label: 'D-', cls: 'grade-d' };
+  if (dist <  40) return { label: 'A+', cls: 'grade-a' };
+  if (dist <  80) return { label: 'A',  cls: 'grade-a' };
+  if (dist < 120) return { label: 'A-', cls: 'grade-a' };
+  if (dist < 160) return { label: 'B+', cls: 'grade-b' };
+  if (dist < 200) return { label: 'B',  cls: 'grade-b' };
+  if (dist < 240) return { label: 'B-', cls: 'grade-b' };
+  if (dist < 280) return { label: 'C+', cls: 'grade-c' };
+  if (dist < 320) return { label: 'C',  cls: 'grade-c' };
+  if (dist < 360) return { label: 'C-', cls: 'grade-c' };
+  if (dist < 400) return { label: 'D+', cls: 'grade-d' };
+  if (dist < 440) return { label: 'D',  cls: 'grade-d' };
+  if (dist < 480) return { label: 'D-', cls: 'grade-d' };
   return { label: 'F', cls: 'grade-f' };
 }
 
@@ -594,20 +594,25 @@ function getDailyEasternSeed() {
 // Non-USA index 15-19: 1x (veryhard)
 // USA capitals: 2x (capitals + capitals_plus)
 // USA non-capitals: 1x (capitals_plus only)
+const countryLabels = {
+  france: 'France', germany: 'Germany', russia: 'Russia',
+  japan: 'Japan', canada: 'Canada', india: 'India', usa: 'USA',
+};
+
 function buildWeightedPool() {
   const pool = [];
   ['france','germany','russia','japan','canada','india'].forEach(country => {
     allCities[country].forEach((city, idx) => {
       const count = idx < 5 ? 4 : idx < 10 ? 3 : idx < 15 ? 2 : 1;
       for (let i = 0; i < count; i++) {
-        pool.push({ name: city.name, lat: city.lat, lng: city.lng });
+        pool.push({ name: city.name, country: countryLabels[country], lat: city.lat, lng: city.lng });
       }
     });
   });
   allCities.usa.forEach(city => {
     const count = city.capital ? 2 : 1;
     for (let i = 0; i < count; i++) {
-      pool.push({ name: city.name, lat: city.lat, lng: city.lng });
+      pool.push({ name: city.name, country: 'USA', lat: city.lat, lng: city.lng });
     }
   });
   return pool;
@@ -678,7 +683,7 @@ function showQuizQuestion() {
   map.closePopup();
 
   const city = challengeCities[quizIndex];
-  document.getElementById('city-prompt').textContent = city.name;
+  document.getElementById('city-prompt').textContent = `${city.name}, ${city.country}`;
   document.getElementById('q-num').textContent       = quizIndex + 1;
   document.getElementById('q-total').textContent     = challengeCities.length;
   document.getElementById('feedback-banner').style.display  = 'none';
@@ -717,7 +722,7 @@ function handleQuizClick(guessLat, guessLng) {
 
   quizAnswerMarker = L.marker([city.lat, city.lng], { icon: makeAnswerIcon() }).addTo(map);
   quizAnswerMarker
-    .bindPopup(`<div style="padding:2px 10px">${city.name}</div>`, { closeButton: false, autoClose: false })
+    .bindPopup(`<div style="padding:2px 10px">${city.name}, ${city.country}</div>`, { closeButton: false, autoClose: false })
     .openPopup();
 
   quizLine = L.polyline([[guessLat, guessLng], [city.lat, city.lng]], {
@@ -728,7 +733,7 @@ function handleQuizClick(guessLat, guessLng) {
   const grade = distGrade(dist);
   const banner = document.getElementById('feedback-banner');
   banner.className = '';
-  document.getElementById('feedback-result').textContent = city.name;
+  document.getElementById('feedback-result').textContent = `${city.name}, ${city.country}`;
   const gradeEl = document.getElementById('feedback-grade');
   gradeEl.textContent = grade.label;
   gradeEl.className   = grade.cls;
