@@ -788,12 +788,27 @@ document.getElementById('share-btn').addEventListener('click', async () => {
   const grade  = document.getElementById('end-grade').textContent;
   const distEl = document.getElementById('end-dist').textContent; // "78 mi average · 5 cities"
   const miAvg  = distEl.split(' mi')[0];
-  const text   = `I scored ${grade} on today's AtlasQuest geography challenge (${miAvg} mi avg)! Try to beat it:`;
+
+  const gradeEmoji = {
+    'A+': '🌟', 'A': '🌟', 'A-': '😊',
+    'B+': '😊', 'B': '😊', 'B-': '😊',
+    'C+': '😐', 'C': '😐', 'C-': '😐',
+    'D+': '😬', 'D': '😬', 'D-': '😬',
+    'F': '💀'
+  }[grade] || '🗺️';
+
+  const etParts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric', year: '2-digit' }).formatToParts(new Date());
+  const etMonth = etParts.find(p => p.type === 'month').value;
+  const etDay   = etParts.find(p => p.type === 'day').value;
+  const etYear  = etParts.find(p => p.type === 'year').value;
+  const etDate  = `${etMonth} ${etDay} 20${etYear}`;
+
+  const text = `AtlasQuest.io - ${etDate}\nAvg: ${miAvg} miles\n${grade} ${gradeEmoji}`;
   const url    = 'https://atlasquest.io/challenge.html';
 
   if (navigator.share) {
     try {
-      await navigator.share({ title: 'AtlasQuest Daily Challenge', text, url });
+      await navigator.share({ text });
     } catch (_) { /* user cancelled */ }
     return;
   }
@@ -801,12 +816,12 @@ document.getElementById('share-btn').addEventListener('click', async () => {
   // Fallback: copy to clipboard
   const info = document.getElementById('share-info');
   try {
-    await navigator.clipboard.writeText(`${text} ${url}`);
+    await navigator.clipboard.writeText(text);
     info.textContent  = 'Link copied to clipboard!';
     info.style.display = 'block';
   } catch (_) {
     // Last resort: show text for manual copy
-    info.textContent  = `${text} ${url}`;
+    info.textContent  = text;
     info.style.display = 'block';
   }
 });
